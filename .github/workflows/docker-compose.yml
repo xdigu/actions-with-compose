@@ -14,3 +14,9 @@ jobs:
         run: |
           docker-compose -f docker-compose.yml up
         shell: bash
+
+      - name: Run docker-compose
+        if: always()
+        run: |
+          docker-compose -f docker-compose.yml down
+        shell: bash
